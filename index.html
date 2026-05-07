@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quillster — Learn Written English</title>
+<meta name="description" content="Master English writing with fun exercises - Find the Error, Fix the Order, Silly Scribbles, and more!">
+<meta name="author" content="Quillster">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="logo-wing">🪶</span> Quillster</div>
+  <span class="free-badge">FREE</span>
+</header>
+
+<!-- HOME SCREEN -->
+<div id="screen-home" class="screen active">
+  <div class="hero" id="hero-bg" style="background: var(--beginner-gradient);">
+    <h1>Write Better.<br>Dream Bigger.</h1>
+    <p>Fun exercises to help you write English with confidence — one step at a time.</p>
+    <div class="level-tabs">
+      <button class="level-tab active" data-level="beginner">Beginner</button>
+      <button class="level-tab" data-level="intermediate">Intermediate</button>
+      <button class="level-tab" data-level="advanced">Advanced</button>
+    </div>
+  </div>
+  <div id="dynamic-cards-container"></div>
+</div>
+
+<!-- All exercise screens (empty containers - populated by JS) -->
+<div id="screen-find-error-beginner" class="screen"></div>
+<div id="screen-find-error-intermediate" class="screen"></div>
+<div id="screen-fix-order" class="screen"></div>
+<div id="screen-madlibs" class="screen"></div>
+<div id="screen-story" class="screen"></div>
+<div id="screen-shrink-it" class="screen"></div>
+<div id="screen-thought-prompt" class="screen"></div>
+<div id="screen-score" class="screen"></div>
+
+<script src="js/exercises-data.js"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>
