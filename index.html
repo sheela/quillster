@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quillster — Learn Written English</title>
-<meta name="description" content="Master English writing with fun exercises - Find the Error, Fix the Order, Silly Scribbles, and more!">
-<meta name="author" content="Quillster">
+<meta name="description" content="Master English writing with fun exercises">
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.min.css">
 </head>
@@ -16,7 +15,6 @@
   <span class="free-badge">FREE</span>
 </header>
 
-<!-- HOME SCREEN -->
 <div id="screen-home" class="screen active">
   <div class="hero" id="hero-bg" style="background: var(--beginner-gradient);">
     <h1>Write Better.<br>Dream Bigger.</h1>
@@ -30,15 +28,114 @@
   <div id="dynamic-cards-container"></div>
 </div>
 
-<!-- All exercise screens (empty containers - populated by JS) -->
-<div id="screen-find-error-beginner" class="screen"></div>
-<div id="screen-find-error-intermediate" class="screen"></div>
-<div id="screen-fix-order" class="screen"></div>
-<div id="screen-madlibs" class="screen"></div>
-<div id="screen-story" class="screen"></div>
-<div id="screen-shrink-it" class="screen"></div>
-<div id="screen-thought-prompt" class="screen"></div>
-<div id="screen-score" class="screen"></div>
+<!-- BEGINNER: FIND THE ERROR SCREEN -->
+<div id="screen-find-error-beginner" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">🔍 Find the Error · Beginner</div><div class="ex-header-sub">Punctuation · Articles · Spelling</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fe-begin-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="fe-begin-progress-text">Question 1 of 5</div>
+  <div class="question-card"><div class="q-meta"><span class="q-tag level">Beginner</span><span class="q-tag topic" id="fe-begin-q-topic"></span></div>
+    <div class="q-instruction">Read the sentence carefully. Choose the answer that correctly identifies the ONE error.</div>
+    <div class="q-sentence" id="fe-begin-sentence"></div>
+    <div class="choices" id="fe-begin-choices"></div>
+    <div class="feedback-box" id="fe-begin-feedback"><div id="fe-begin-feedback-main"></div><div class="feedback-explain" id="fe-begin-feedback-explain"></div></div>
+  </div>
+  <button class="next-btn" id="fe-begin-next-btn" onclick="feBeginNext()">Next Question →</button>
+</div>
+
+<!-- INTERMEDIATE: FIND THE ERROR SCREEN -->
+<div id="screen-find-error-intermediate" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">🔍 Find the Error · Intermediate</div><div class="ex-header-sub">Verb Forms & Irregular Past Tense</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fe-int-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="fe-int-progress-text">Question 1 of 5</div>
+  <div class="question-card"><div class="q-meta"><span class="q-tag level">Intermediate</span><span class="q-tag topic" id="fe-int-q-topic"></span></div>
+    <div class="q-instruction">Read the sentence carefully. Choose the answer that correctly identifies the ONE error.</div>
+    <div class="q-sentence" id="fe-int-sentence"></div>
+    <div class="choices" id="fe-int-choices"></div>
+    <div class="feedback-box" id="fe-int-feedback"><div id="fe-int-feedback-main"></div><div class="feedback-explain" id="fe-int-feedback-explain"></div></div>
+  </div>
+  <button class="next-btn" id="fe-int-next-btn" onclick="feIntNext()">Next Question →</button>
+</div>
+
+<!-- BEGINNER: FIX THE ORDER SCREEN -->
+<div id="screen-fix-order" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">🔀 Fix the Order</div><div class="ex-header-sub">Tap words in the right order to form a correct sentence</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="fo-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="fo-progress-text">Question 1 of 5</div>
+  <div class="question-card"><div class="q-meta"><span class="q-tag level">Beginner</span><span class="q-tag topic">Word Order</span></div>
+    <div class="q-instruction">Tap the words below in the correct order to build the sentence. Tap a word in your answer to remove it.</div>
+    <div class="answer-area" id="fo-answer-area"><span class="answer-placeholder" id="fo-placeholder">Tap words below to start...</span></div>
+    <button class="clear-btn" onclick="foClear()">✕ Clear all</button>
+    <div class="word-bank" id="fo-word-bank"></div>
+    <button class="check-btn" id="fo-check-btn" onclick="foCheck()">✓ Check My Answer</button>
+    <div class="feedback-box" id="fo-feedback"><div id="fo-feedback-main"></div><div class="feedback-explain" id="fo-feedback-explain"></div></div>
+  </div>
+  <button class="next-btn" id="fo-next-btn" onclick="foNext()">Next Question →</button>
+</div>
+
+<!-- BEGINNER: SILLY SCRIBBLES (MAD LIBS) -->
+<div id="screen-madlibs" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">🎭 Silly Scribbles</div><div class="ex-header-sub">Fill the blanks — then read your silly story!</div></div></div>
+  <div id="madlib-input-screen"><div style="padding:14px 16px 0; font-size:14px; font-weight:700;">Enter your words first — don't peek at the story yet! 😄</div>
+    <div class="madlib-setup" id="madlib-inputs"></div>
+    <div style="padding: 0 16px 20px;"><button class="btn-primary" style="width:100%;" onclick="mlReveal()">Reveal My Story! 🎉</button></div>
+  </div>
+  <div id="madlib-story-screen" style="display:none;"><div class="madlib-story" id="madlib-story-text"></div>
+    <div style="padding: 0 16px 20px; display:flex; flex-direction:column; gap:10px;"><button class="btn-primary" onclick="mlReset()">Try Again with New Words 🔄</button><button class="btn-secondary" onclick="mlNext()">Try a Different Story →</button></div>
+  </div>
+</div>
+
+<!-- BEGINNER: STORY STARTER -->
+<div id="screen-story" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">📖 Story Starter</div><div class="ex-header-sub">Continue the story in your own words</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="ss-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="ss-progress-text">Story 1 of 4</div>
+  <div class="story-prompt-card"><div class="story-prompt-text" id="ss-prompt"></div></div>
+  <div class="story-hints" id="ss-hints"></div>
+  <div class="q-instruction" style="margin:0 16px 10px;">Write at least 3–5 sentences to continue the story. Use full stops, commas, and capital letters correctly.</div>
+  <textarea class="story-textarea" id="ss-textarea" placeholder="Start writing here..." oninput="ssWordCount()"></textarea>
+  <div class="word-count" id="ss-word-count">0 words</div>
+  <div style="padding: 0 16px 8px;"><button class="check-btn" onclick="ssSubmit()">✓ I'm Done — See Tips</button>
+    <div class="feedback-box" id="ss-feedback"><div id="ss-feedback-main"></div></div>
+  </div>
+  <button class="next-btn" id="ss-next-btn" onclick="ssNext()">Next Story →</button>
+</div>
+
+<!-- INTERMEDIATE: SHRINK IT -->
+<div id="screen-shrink-it" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">📝 Shrink It</div><div class="ex-header-sub">Rewrite the rambling sentence — choose the clearest, correct version</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="shrink-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="shrink-progress-text">Exercise 1 of 2</div>
+  <div class="question-card"><div class="q-meta"><span class="q-tag level">Intermediate</span><span class="q-tag topic">Concise Rewriting</span></div>
+    <div class="q-instruction">This sentence is too long and messy. Choose the option that best restates the meaning clearly and correctly.</div>
+    <div class="q-sentence runon-sentence" id="shrink-sentence"></div>
+    <div class="choices" id="shrink-choices"></div>
+    <div class="feedback-box" id="shrink-feedback"><div id="shrink-feedback-main"></div><div class="feedback-explain" id="shrink-feedback-explain"></div></div>
+  </div>
+  <button class="next-btn" id="shrink-next-btn" onclick="shrinkNext()">Next Exercise →</button>
+</div>
+
+<!-- INTERMEDIATE: THOUGHT PROMPT -->
+<div id="screen-thought-prompt" class="screen">
+  <div class="ex-header"><button class="back-btn" onclick="goHome()">← Back</button><div class="ex-header-info"><div class="ex-header-title">💭 Thought Prompt</div><div class="ex-header-sub">Write 5 sentences on the given topic</div></div></div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="tp-progress-fill" style="width:0%"></div></div>
+  <div class="progress-text" id="tp-progress-text">Prompt 1 of 2</div>
+  <div class="story-prompt-card"><div class="story-prompt-text" id="tp-prompt"></div></div>
+  <div class="story-hints" id="tp-hints"></div>
+  <div class="q-instruction" style="margin:0 16px 10px;">Write at least 5 complete sentences. Focus on clarity, punctuation, and interesting details.</div>
+  <textarea class="story-textarea" id="tp-textarea" placeholder="Start writing here..." oninput="tpWordCount()"></textarea>
+  <div class="word-count" id="tp-word-count">0 words</div>
+  <div style="padding: 0 16px 8px;"><button class="check-btn" onclick="tpSubmit()">✓ Submit & Get Feedback</button>
+    <div class="feedback-box" id="tp-feedback"><div id="tp-feedback-main"></div></div>
+  </div>
+  <button class="next-btn" id="tp-next-btn" onclick="tpNext()">Next Prompt →</button>
+</div>
+
+<!-- SCORE SCREEN -->
+<div id="screen-score" class="screen">
+  <div class="score-screen"><div class="score-emoji" id="score-emoji">🌟</div><div class="score-title" id="score-title">Well Done!</div><div class="score-sub" id="score-sub"></div><div class="score-big" id="score-number"></div><div class="score-label" id="score-label">Correct Answers</div><div id="score-message" style="padding:12px 24px;background:var(--sky);border-radius:var(--radius);margin:0 0 28px;"></div>
+    <div class="score-actions"><button class="btn-primary" id="score-replay-btn">Try Again 🔄</button><button class="btn-secondary" onclick="goHome()">← Choose Another Exercise</button></div>
+  </div>
+</div>
 
 <script src="js/exercises-data.js"></script>
 <script src="js/app.min.js"></script>
