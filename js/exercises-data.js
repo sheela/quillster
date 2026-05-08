@@ -1,4 +1,4 @@
-// Quillster Exercise Data - All content in one place
+// Quillster Exercise Data - All content in one place (CORRECTED ORDER ORDER)
 const EXERCISE_DATA = {
   beginner: {
     findError: [
@@ -37,7 +37,7 @@ const EXERCISE_DATA = {
         id: 1,
         title: "Anil's Poster Project",
         paragraph: "Before Anil painted the poster, he wrote the title at the top. The night before, he had drawn planets on the poster with a pencil. After the paint on the poster dried, Anil carried the poster carefully to school. In the morning, he showed the finished project to his teacher.",
-        events: ["Anil wrote the title", "Anil drew planets on the poster", "Anil painted the poster", "The paint on the poster dried", "Anil carried the poster to school", "Anil showed the project to his teacher"],
+        events: ["Anil drew planets on the poster", "Anil wrote the title", "Anil painted the poster", "The paint on the poster dried", "Anil carried the poster to school", "Anil showed the project to his teacher"],
         correctOrder: [0, 1, 2, 3, 4, 5]
       },
       {
