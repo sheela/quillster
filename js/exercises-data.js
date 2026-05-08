@@ -1,4 +1,4 @@
-// Quillster Exercise Data - All content in one place (CORRECTED ORDER ORDER)
+// Quillster Exercise Data - All content in one place
 const EXERCISE_DATA = {
   beginner: {
     findError: [
