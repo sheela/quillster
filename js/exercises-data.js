@@ -1,4 +1,4 @@
-// Quillster Exercise Data - Easily update without touching core JS
+// Quillster Exercise Data - All content in one place
 const EXERCISE_DATA = {
   beginner: {
     findError: [
@@ -31,6 +31,29 @@ const EXERCISE_DATA = {
     thoughtPrompts: [
       { type: "Fiction", prompt: "You discover a small, hidden door in your bedroom that was never there before. When you open it, you find a tiny world inside. Describe what you see, hear, and do in the first five minutes.", hint: "💡 Use your senses: what does the tiny world look like? Are there creatures? How do you feel?" },
       { type: "Non-Fiction", prompt: "Think about a skill you learned recently (cooking, riding a bike, playing a game, etc.). Describe the process of learning it — what was hard, what helped you improve, and how you felt when you finally succeeded.", hint: "💡 Be specific. Mention one struggle and one breakthrough moment. Use past tense." }
+    ],
+    orderOrder: [
+      {
+        id: 1,
+        title: "Anil's Poster Project",
+        paragraph: "Before Anil painted the poster, he wrote the title at the top. The night before, he had drawn planets on the poster with a pencil. After the paint on the poster dried, Anil carried the poster carefully to school. In the morning, he showed the finished project to his teacher.",
+        events: ["Anil drew planets on the poster", "Anil wrote the title", "Anil painted the poster", "The paint on the poster dried", "Anil carried the poster to school", "Anil showed the project to his teacher"],
+        correctOrder: [0, 1, 2, 3, 4, 5]
+      },
+      {
+        id: 2,
+        title: "The Science Fair",
+        paragraph: "Before the fair started, Riya had already set up her volcano model. Earlier that week, she had mixed baking soda and vinegar to test it. After the judges announced the winners, Riya felt proud of her hard work. During the fair, she demonstrated the eruption to many visitors.",
+        events: ["Riya mixed baking soda and vinegar to test it", "Riya set up her volcano model", "Riya demonstrated the eruption to visitors", "The judges announced the winners", "Riya felt proud"],
+        correctOrder: [0, 1, 2, 3, 4]
+      },
+      {
+        id: 3,
+        title: "The Birthday Surprise",
+        paragraph: "After everyone sang 'Happy Birthday,' Meena opened her presents. The day before, her mother had secretly baked a chocolate cake. Before the party started, Meena's friends decorated the living room with balloons. During the party, they played games and ate cake.",
+        events: ["Meena's mother baked a chocolate cake", "Friends decorated the living room", "The party started", "Everyone sang 'Happy Birthday'", "They played games and ate cake", "Meena opened her presents"],
+        correctOrder: [0, 1, 2, 3, 4, 5]
+      }
     ]
   },
   madlibs: [
